@@ -1,11 +1,10 @@
 import React from "react";
-import './App.css'
+import "./App.css";
 
 const Pokedex = require("pokeapi-js-wrapper");
 const P = new Pokedex.Pokedex({ cacheImages: true });
 
 function App() {
-
   return (
     <div id="app">
       <header>

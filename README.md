@@ -1,6 +1,6 @@
-# React Redux workshop with PokeAPI
+# React Redux workshop with PokéAPI
 
-This workshop uses the [PokeAPI](https://pokeapi.co/) to create an example React/Redux application.
+This workshop uses the [PokéAPI](https://pokeapi.co/) to create an example React/Redux application.
 
 ## Prerequisites
 - HTML/CSS
