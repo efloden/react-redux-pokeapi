@@ -1,0 +1,20 @@
+#app {
+  text-align: center;
+}
+
+#app .starters-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#app .starter-option {
+  cursor: pointer;
+  border: 3px solid black;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+#app .starter-option:hover {
+  border: 3px solid red;
+}
