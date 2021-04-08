@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 15px;
 }
 
 #app .starter-option {
@@ -15,6 +16,50 @@
   border-radius: 50%;
 }
 
+#app .starter-option.selected {
+  background: linear-gradient(180deg, #FF3838 50%, #FFF 50%);
+  animation-name: wiggle;
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  animation-duration: 500ms;
+  -ms-animation-duration: 500ms;
+  -webkit-animation-duration: 500ms;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+}
+
 #app .starter-option:hover {
   border: 3px solid red;
+}
+
+#app .selected-pokemon-container {
+
+}
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(10deg);}
+  25% {-webkit-transform: rotate(-10deg);}
+  50% {-webkit-transform: rotate(10deg);}
+  75% {-webkit-transform: rotate(-5deg);}
+  100% {-webkit-transform: rotate(0deg);}
+}
+
+@-ms-keyframes wiggle {
+  0% {-ms-transform: rotate(1deg);}
+  25% {-ms-transform: rotate(-1deg);}
+  50% {-ms-transform: rotate(1.5deg);}
+  75% {-ms-transform: rotate(-5deg);}
+  100% {-ms-transform: rotate(0deg);}
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
 }
