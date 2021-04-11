@@ -13,9 +13,9 @@ For this we can use the React state management `useState` hook to keep track of 
 3. Create an `onClick` handler on the `starter-option` div, have it call the `setSelectedPokemon` function with the `pokemon` as an argument.
 
 4. If a pokemon is selected:
-    - Underneath the `starters-container` section, render the `selectedPokemon` name.
-    - Add a `selected` class to the corresponding pokemon's `starter-option` div.
+   - Underneath the `starters-container` section, render the `selectedPokemon` name.
+   - Add a `selected` class to the corresponding pokemon's `starter-option` div.
 
 :bulb: Make sure to read the [React useState Documentation](https://reactjs.org/docs/hooks-state.html)
 
-:bulb: See this steps completed code in [/src/docs/steps/step2/App.js](https://github.com/efloden/react-redux-pokeapi/blob/main/src/steps/step2/App.js)
+:bulb: See this steps completed code in [/src/steps/step2/app.js](https://github.com/efloden/react-redux-pokeapi/blob/main/src/steps/step2/app.js)

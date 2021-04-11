@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./app.css";
+import "./home.css";
 
-function App() {
+export default function Home() {
   const [selectedPokemon, setSelectedPokemon] = useState(undefined);
 
   const starterPokemon = [
@@ -20,7 +20,7 @@ function App() {
   ];
 
   return (
-    <div id="app">
+    <div id="home">
       <header>
         <h1>Choose your Pokémon</h1>
       </header>
@@ -54,5 +54,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -1,0 +1,12 @@
+#pokedex {
+  text-align: center;
+}
+#pokedex ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+#pokedex .skeleton-item {
+  height: 90px;
+}
