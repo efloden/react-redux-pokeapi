@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/home/home";
 import Pokedex from "./components/pokedex/pokedex";
+import WhoIsIt from "./components/who-is-it/who-is-it";
 import "./app.css";
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Switch>
+          <Route path={`/pokedex/:pokemonId`}>
+            <WhoIsIt />
+          </Route>
           <Route path="/pokedex">
             <Pokedex />
           </Route>

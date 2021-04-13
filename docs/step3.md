@@ -31,4 +31,4 @@ src
 6. Follow the React Router [Basic Router](https://reactrouter.com/web/guides/quick-start/1st-example-basic-routing) example to serve the `Home` component on the base path `"/"`, and `Pokedex` on the path `"/pokedex"`
 7. Test your router to ensure your `Home` and `Pokedex` components display when changing routes.
 
-:bulb: See this steps completed code in [/src/steps/step3](https://github.com/efloden/react-redux-pokeapi/blob/main/src/steps/step3)
+:bulb: See this steps completed code in [/steps/step3](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step3)

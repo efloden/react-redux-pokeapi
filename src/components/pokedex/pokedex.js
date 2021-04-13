@@ -56,12 +56,14 @@ function PokemonList({ pokemonResponse, interval }) {
     const pokedexNum = index + interval.offset + 1;
     return (
       <li key={pokemon.name}>
-        <img
-          width="50px"
-          height="50px"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokedexNum}.svg`}
-          alt={pokemon.name}
-        />
+        <a href={`/pokedex/${pokedexNum}`}>
+          <img
+            width="50px"
+            height="50px"
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokedexNum}.svg`}
+            alt={pokemon.name}
+          />
+        </a>
         <div>#{pokedexNum}</div>
         <div>{pokemon.name}</div>
       </li>

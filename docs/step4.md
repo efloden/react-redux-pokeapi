@@ -71,4 +71,4 @@ Confirm tour `pokemonResponse` is set to the PokeAPI `getPokemonsList` response:
 
 ### 5. Render the `pokemonResponse` in a list.
 
-:bulb: See this steps completed code in [/src/steps/step4](https://github.com/efloden/react-redux-pokeapi/blob/main/src/steps/step4)
+:bulb: See this steps completed code in [/steps/step4](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step4)
