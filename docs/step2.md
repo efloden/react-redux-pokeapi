@@ -8,7 +8,7 @@ For this we can use the React state management `useState` hook to keep track of 
 
 1. Import the `useState` hook from React at the top of the App.js file.
 
-2. With the `useState` hook, create a state variable `selectedPokemon`, and update function `setSelectedPokemon`, and initialize it as `undefined`.
+2. With the `useState` hook, create a state variable `selectedPokemon`, and update function `setSelectedPokemon`, it will be initialized as `undefined`.
 
 3. Create an `onClick` handler on the `starter-option` div, have it call the `setSelectedPokemon` function with the `pokemon` as an argument.
 

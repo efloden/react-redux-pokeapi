@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./pokedex.css";
-
-const LIMIT = 12;
 
 export default function Pokedex() {
   const [pokemonResponse, setPokemonResponse] = useState();
   const [isRequestPending, setIsRequestPending] = useState(true);
   const [currentPageUrl, setCurrentPageUrl] = useState(
-    `https://pokeapi.co/api/v2/pokemon?limit=${LIMIT}`
+    `https://pokeapi.co/api/v2/pokemon?limit=12`
   );
 
   useEffect(() => {
@@ -56,7 +55,7 @@ export default function Pokedex() {
 
 function LoadingSkeleton() {
   const skeletonItems = [];
-  for (let i = 0; i < LIMIT; i++) {
+  for (let i = 0; i < 12; i++) {
     skeletonItems.push(
       <li key={i} className="skeleton-item">
         . . .
@@ -71,14 +70,15 @@ function PokemonList({ pokemonResults }) {
     const pokedexNum = pokemon.url.split("/")[6];
     return (
       <li key={pokemon.name}>
-        <a href={`/pokedex/${pokedexNum}`}>
+        <Link to={`/pokedex/${pokedexNum}`}>
           <img
+            className={"discovered"}
             width="50px"
             height="50px"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokedexNum}.svg`}
             alt={pokemon.name}
           />
-        </a>
+        </Link>
         <article>#{pokedexNum}</article>
         <article>{pokemon.name}</article>
       </li>

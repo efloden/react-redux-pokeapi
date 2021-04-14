@@ -25,7 +25,10 @@ This workshop uses the [PokéAPI](https://pokeapi.co/) to create an example Reac
 
 - [Quick Start](https://reactrouter.com/web/guides/quick-start)
 
+## Redux
+
+- [Redux Promise Middleware](https://github.com/pburtchaell/redux-promise-middleware)
+
 ## Other Resources
 
-- PokeAPI request caching [pokeapi-js-wrapper](https://github.com/PokeAPI/pokeapi-js-wrapper)
 - [Responsive Layouts Using CSS Grid](https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/)

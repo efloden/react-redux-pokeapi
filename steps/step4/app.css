@@ -1,0 +1,12 @@
+#app h1 {
+  text-align: center;
+}
+
+#app nav ul {
+  list-style: none;
+  display: flex;
+}
+
+#app nav ul > li {
+  padding: 10px;
+}

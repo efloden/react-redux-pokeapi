@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./app.css";
 
 function App() {
-  const [selectedPokemon, setSelectedPokemon] = useState(undefined);
+  const [selectedPokemon, setSelectedPokemon] = useState();
 
   const starterPokemon = [
     {

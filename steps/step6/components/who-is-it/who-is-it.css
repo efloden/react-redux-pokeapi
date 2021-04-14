@@ -1,0 +1,19 @@
+#who-is-it {
+  text-align: center;
+}
+#who-is-it img {
+  filter: brightness(0) blur(0.5px);
+}
+#who-is-it img.discovered {
+  animation: fadeIn 2s;
+  filter: unset;
+}
+
+@keyframes fadeIn {
+  0% {
+    filter: brightness(0);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
