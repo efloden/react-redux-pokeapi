@@ -63,3 +63,5 @@ Surrond `<App />` with the `Provider`. This will make our Redux state globally a
 - In `store.js` [create the Redux store](https://redux.js.org/api/createstore) using the `rootReducer` from `reducers/index.js`, and the `redux-promise` and `redux-logger` middlewares.
 
 :bulb: See this steps completed code in [/steps/step6](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step6)
+
+[<- prev step](./step5) [next step ->](./step7)

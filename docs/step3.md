@@ -32,3 +32,5 @@ src
 7. Test your router to ensure your `Home` and `Pokedex` components display when changing routes.
 
 :bulb: See this steps completed code in [/steps/step3](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step3)
+
+[<- prev step](./step2) [next step ->](./step4)

@@ -70,3 +70,5 @@ Confirm the `pokemonResponse` is set to the PokeAPI `getPokemonsList` response:
 ### 4. Render the `pokemonResponse` in a list
 
 :bulb: See this steps completed code in [/steps/step4](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step4)
+
+[<- prev step](./step3) [next step ->](./step5)

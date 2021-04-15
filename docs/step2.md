@@ -19,3 +19,5 @@ For this we can use the React state management `useState` hook to keep track of 
 :bulb: Make sure to read the [React useState Documentation](https://reactjs.org/docs/hooks-state.html)
 
 :bulb: See this steps completed code in [/steps/step2/app.js](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step2/app.js)
+
+[<- prev step](./step1) [next step ->](./step3)
