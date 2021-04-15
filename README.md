@@ -2,6 +2,10 @@
 
 This workshop uses the [PokéAPI](https://pokeapi.co/) to create an example React/Redux application.
 
+## How to follow this workshop
+
+Follow the step markdown files in the [docs](./docs) folder, starting with [docs/step1](./docs/step1.md)
+
 ## Prerequisites
 
 - HTML/CSS

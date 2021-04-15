@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { addDiscoveredPokemon } from ".././../actions";
-import axios from "axios";
+import { addDiscoveredPokemon, getPokemonItem } from ".././../actions";
 import "./who-is-it.css";
 
-function WhoIsIt({ addDiscoveredPokemon }) {
-  const [pokemonResponse, setPokemonResponse] = useState(undefined);
-  const [isRequestPending, setIsRequestPending] = useState(false);
-  const [discovered, setDiscovered] = useState(false);
+function WhoIsIt({
+  pokedex,
+  pokeapiItem,
+  getPokemonItem,
+  addDiscoveredPokemon,
+}) {
+  const { pokemonResponse, isRequestPending, error } = pokeapiItem;
 
   let { pokemonId } = useParams();
 
+  const discovered = pokedex.discoveredPokemon[pokemonId];
+
   useEffect(() => {
-    setIsRequestPending(true);
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).then((res) => {
-      setIsRequestPending(false);
-      setPokemonResponse(res.data);
-    });
-  }, [pokemonId]);
+    getPokemonItem(pokemonId);
+  }, [getPokemonItem, pokemonId]);
 
   const handleGuessChange = (guess) => {
     if (guess.toLocaleLowerCase() === pokemonResponse.name) {
-      setDiscovered(true);
       addDiscoveredPokemon(pokemonId);
     }
   };
@@ -32,7 +31,11 @@ function WhoIsIt({ addDiscoveredPokemon }) {
       <header>
         <h1>Who's That Pokémon?</h1>
       </header>
-      {isRequestPending || !pokemonResponse ? (
+      {error ? (
+        <div>
+          {error.response.status}: {error.response.data}
+        </div>
+      ) : isRequestPending ? (
         <div>Loading...</div>
       ) : (
         <div>
@@ -69,7 +72,7 @@ function UnknownPokemon({ name, id, handleGuessChange }) {
   );
 }
 
-function PokemonDetails({ name, id }) {
+function PokemonDetails({ name, id, types }) {
   const capitalizedName = name[0].toUpperCase() + name.substring(1);
   return (
     <figure>
@@ -79,6 +82,15 @@ function PokemonDetails({ name, id }) {
         alt={name}
       />
       <figcaption>It's {capitalizedName}!</figcaption>
+      <div>
+        {types.map((type, index) => {
+          return (
+            <span key={index} className={"pokemon-type " + type.type.name}>
+              {type.type.name}
+            </span>
+          );
+        })}
+      </div>
       <Link to="/pokedex">Back to list</Link>
     </figure>
   );
@@ -86,8 +98,12 @@ function PokemonDetails({ name, id }) {
 
 const mapStateToProps = (state) => {
   return {
+    pokeapiItem: state.pokeapiItem,
     pokedex: state.pokedex,
   };
 };
 
-export default connect(mapStateToProps, { addDiscoveredPokemon })(WhoIsIt);
+export default connect(mapStateToProps, {
+  addDiscoveredPokemon,
+  getPokemonItem,
+})(WhoIsIt);

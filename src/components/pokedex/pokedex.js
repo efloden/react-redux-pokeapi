@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { getPokemonPage, setCurrentPageUrl } from "../../actions";
 import "./pokedex.css";
 
-function Pokedex({ pokeapi, pokedex, getPokemonPage, setCurrentPageUrl }) {
-  const { pokemonResponse, isRequestPending } = pokeapi;
+function Pokedex({ pokeapiPage, pokedex, getPokemonPage, setCurrentPageUrl }) {
+  const { pokemonResponse, isRequestPending, error } = pokeapiPage;
   const { currentPageUrl } = pokedex;
 
   useEffect(() => {
@@ -31,7 +31,11 @@ function Pokedex({ pokeapi, pokedex, getPokemonPage, setCurrentPageUrl }) {
       </header>
       <main>
         <ul>
-          {isRequestPending ? (
+          {error ? (
+            <div>
+              {error.response.status}: {error.response.data}
+            </div>
+          ) : isRequestPending ? (
             <LoadingSkeleton />
           ) : (
             <PokemonList
@@ -66,8 +70,6 @@ function PokemonList({ pokemonResults, pokedex }) {
   return pokemonResults.map((pokemon) => {
     const pokedexNum = pokemon.url.split("/")[6];
     const discovered = pokedex.discoveredPokemon[pokedexNum];
-    const capitalizedName =
-      pokemon.name[0].toUpperCase() + pokemon.name.substring(1);
     return (
       <li key={pokemon.name}>
         <Link to={`/pokedex/${pokedexNum}`}>
@@ -80,7 +82,7 @@ function PokemonList({ pokemonResults, pokedex }) {
           />
         </Link>
         <article>#{pokedexNum}</article>
-        <article>{discovered ? capitalizedName : "??????"}</article>
+        <article>{discovered ? pokemon.name : "??????"}</article>
       </li>
     );
   });
@@ -101,7 +103,7 @@ function Pagination({ gotoPrevPage, gotoNextPage, isRequestPending }) {
 
 const mapStateToProps = (state) => {
   return {
-    pokeapi: state.pokeapi,
+    pokeapiPage: state.pokeapiPage,
     pokedex: state.pokedex,
   };
 };

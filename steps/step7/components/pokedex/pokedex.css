@@ -1,19 +1,25 @@
 #pokedex {
   text-align: center;
 }
+
 #pokedex ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(27vw, 1fr));
   grid-gap: 1rem;
+  padding: 0;
 }
+
 #pokedex .skeleton-item {
   height: 90.5px;
 }
+
 #pokedex img {
   filter: brightness(0);
 }
-
+#pokedex li article {
+  text-transform: capitalize;
+}
 #pokedex .discovered {
   filter: unset;
 }

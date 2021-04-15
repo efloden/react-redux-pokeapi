@@ -5,7 +5,7 @@ import "./who-is-it.css";
 
 export default function WhoIsIt() {
   const [pokemonResponse, setPokemonResponse] = useState(undefined);
-  const [isRequestPending, setIsRequestPending] = useState(false);
+  const [isRequestPending, setIsRequestPending] = useState(true);
   const [discovered, setDiscovered] = useState(false);
 
   let { pokemonId } = useParams();
@@ -29,7 +29,7 @@ export default function WhoIsIt() {
       <header>
         <h1>Who's That Pokémon?</h1>
       </header>
-      {isRequestPending || !pokemonResponse ? (
+      {isRequestPending ? (
         <div>Loading...</div>
       ) : (
         <div>

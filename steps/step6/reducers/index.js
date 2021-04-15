@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
-import PokeAPIReducer from "./pokeapi-reducer";
+import PokeAPIItemReducer from "./pokeapi-item-reducer";
+import PokeAPIPageReducer from "./pokeapi-page-reducer";
 import PokedexReducer from "./pokedex-reducer";
 
 const rootReducer = combineReducers({
-  pokeapi: PokeAPIReducer,
+  pokeapiItem: PokeAPIItemReducer,
+  pokeapiPage: PokeAPIPageReducer,
   pokedex: PokedexReducer,
 });
 
