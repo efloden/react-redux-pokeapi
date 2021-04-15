@@ -133,4 +133,4 @@ return (
 
 :bulb: See this steps completed code in [/steps/step5](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step5)
 
-[<- prev step](./step4) [next step ->](./step6)
+[<- prev step](./step4.md) [next step ->](./step6.md)

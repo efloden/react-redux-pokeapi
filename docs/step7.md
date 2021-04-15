@@ -67,4 +67,4 @@ function Pokedex({ pokeapiPage, pokedex, getPokemonPage, setCurrentPageUrl }) {
   const { currentPageUrl } = pokedex;
 ```
 
-[<- prev step](./step6)
+[<- prev step](./step6.md)

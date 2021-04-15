@@ -64,4 +64,4 @@ Surrond `<App />` with the `Provider`. This will make our Redux state globally a
 
 :bulb: See this steps completed code in [/steps/step6](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step6)
 
-[<- prev step](./step5) [next step ->](./step7)
+[<- prev step](./step5.md) [next step ->](./step7.md)

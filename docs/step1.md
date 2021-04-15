@@ -57,4 +57,4 @@ const starterPokemon = [
 
 :bulb: See this steps completed code in [/steps/step1/components/home/home.js](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step1/app.js)
 
-[next step ->](./step2)
+[next step ->](./step2.md)

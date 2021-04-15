@@ -33,4 +33,4 @@ src
 
 :bulb: See this steps completed code in [/steps/step3](https://github.com/efloden/react-redux-pokeapi/blob/main/steps/step3)
 
-[<- prev step](./step2) [next step ->](./step4)
+[<- prev step](./step2.md) [next step ->](./step4.md)
