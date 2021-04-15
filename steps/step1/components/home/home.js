@@ -18,7 +18,7 @@ export default function Home() {
   ];
 
   return (
-    <div id="app">
+    <div id="home">
       <header>
         <h1>Choose your Pokémon</h1>
       </header>

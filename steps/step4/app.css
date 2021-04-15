@@ -1,10 +1,22 @@
-#app h1 {
-  text-align: center;
+#app {
+  font-family: "Open Sans", sans-serif;
 }
 
+#app h1 {
+  text-align: center;
+  font-family: "Cantora One", sans-serif;
+}
 #app nav ul {
   list-style: none;
   display: flex;
+}
+
+#app nav a {
+  color: black;
+  font-weight: bold;
+}
+#app nav a:hover {
+  color: #ff3838;
 }
 
 #app nav ul > li {
