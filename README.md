@@ -64,6 +64,7 @@ npm run start
 
 ## Redux
 
+- [Redux Async Logic](https://redux.js.org/tutorials/essentials/part-5-async-logic)
 - [Redux Promise Middleware](https://github.com/pburtchaell/redux-promise-middleware)
 
 ## Other Resources

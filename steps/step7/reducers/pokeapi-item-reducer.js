@@ -1,6 +1,7 @@
 const defaultState = {
-  isRequestPending: true,
+  status: "idle",
   pokemonResponse: undefined,
+  error: undefined,
 };
 
 export default function PokeAPIItemReducer(state = defaultState, action) {
@@ -8,18 +9,18 @@ export default function PokeAPIItemReducer(state = defaultState, action) {
     case "GET_POKEMON_ITEM_PENDING":
       return {
         ...state,
-        isRequestPending: true,
+        status: "loading",
       };
     case "GET_POKEMON_ITEM_FULFILLED":
       return {
         ...state,
-        isRequestPending: false,
+        status: "succeeded",
         pokemonResponse: action.payload.data,
       };
     case "GET_POKEMON_ITEM_REJECTED":
       return {
         ...state,
-        isRequestPending: false,
+        status: "failed",
         error: action.payload,
       };
     default:

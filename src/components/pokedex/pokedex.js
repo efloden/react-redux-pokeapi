@@ -5,7 +5,7 @@ import { getPokemonPage, setCurrentPageUrl } from "../../actions";
 import "./pokedex.css";
 
 function Pokedex({ pokeapiPage, pokedex, getPokemonPage, setCurrentPageUrl }) {
-  const { pokemonResponse, isRequestPending, error } = pokeapiPage;
+  const { pokemonResponse, status, error } = pokeapiPage;
   const { currentPageUrl } = pokedex;
 
   useEffect(() => {
@@ -24,31 +24,30 @@ function Pokedex({ pokeapiPage, pokedex, getPokemonPage, setCurrentPageUrl }) {
     }
   };
 
+  let content;
+
+  if (status === "loading") {
+    content = <LoadingSkeleton />;
+  } else if (status === "succeeded") {
+    content = (
+      <PokemonList pokemonResults={pokemonResponse.results} pokedex={pokedex} />
+    );
+  } else if (status === "failed") {
+    content = <div>{error}</div>;
+  }
+
   return (
     <div id="pokedex">
       <header>
         <h1>Pokédex</h1>
       </header>
       <main>
-        <ul>
-          {error ? (
-            <div>
-              {error.response.status}: {error.response.data}
-            </div>
-          ) : isRequestPending ? (
-            <LoadingSkeleton />
-          ) : (
-            <PokemonList
-              pokemonResults={pokemonResponse.results}
-              pokedex={pokedex}
-            />
-          )}
-        </ul>
+        <ul>{content}</ul>
       </main>
       <Pagination
         gotoNextPage={gotoNextPage}
         gotoPrevPage={gotoPrevPage}
-        isRequestPending={isRequestPending}
+        status={status}
       />
     </div>
   );

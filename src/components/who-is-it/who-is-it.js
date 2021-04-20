@@ -10,7 +10,7 @@ function WhoIsIt({
   getPokemonItem,
   addDiscoveredPokemon,
 }) {
-  const { pokemonResponse, isRequestPending, error } = pokeapiItem;
+  const { pokemonResponse, status, error } = pokeapiItem;
 
   let { pokemonId } = useParams();
 
@@ -26,29 +26,31 @@ function WhoIsIt({
     }
   };
 
+  let content;
+
+  if (status === "loading") {
+    content = <div className="loader">Loading...</div>;
+  } else if (status === "succeeded") {
+    if (discovered) {
+      content = <PokemonDetails {...pokemonResponse} />;
+    } else {
+      content = (
+        <UnknownPokemon
+          {...pokemonResponse}
+          handleGuessChange={handleGuessChange}
+        />
+      );
+    }
+  } else if (status === "failed") {
+    content = <div>{error}</div>;
+  }
+
   return (
     <div id="who-is-it">
       <header>
         <h1>Who's That Pokémon?</h1>
       </header>
-      {error ? (
-        <div>
-          {error.response.status}: {error.response.data}
-        </div>
-      ) : isRequestPending ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          {discovered ? (
-            <PokemonDetails {...pokemonResponse} />
-          ) : (
-            <UnknownPokemon
-              {...pokemonResponse}
-              handleGuessChange={handleGuessChange}
-            />
-          )}
-        </div>
-      )}
+      {content}
     </div>
   );
 }

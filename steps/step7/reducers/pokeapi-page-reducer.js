@@ -1,5 +1,5 @@
 const defaultState = {
-  isRequestPending: true,
+  status: "idle",
   pokemonResponse: undefined,
 };
 
@@ -8,18 +8,18 @@ export default function PokeAPIPageReducer(state = defaultState, action) {
     case "GET_POKEMON_PAGE_PENDING":
       return {
         ...state,
-        isRequestPending: true,
+        status: "loading",
       };
     case "GET_POKEMON_PAGE_FULFILLED":
       return {
         ...state,
-        isRequestPending: false,
+        status: "succeeded",
         pokemonResponse: action.payload.data,
       };
     case "GET_POKEMON_PAGE_REJECTED":
       return {
         ...state,
-        isRequestPending: false,
+        status: "failed",
         error: action.payload,
       };
     default:

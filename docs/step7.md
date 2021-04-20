@@ -1,9 +1,6 @@
 # Step 7
 
-Congratulations on making it this far!
-
-Time to draw the rest of the owl.
-![Draw the Owl](https://i.pinimg.com/originals/72/29/5c/72295c2669305944b919e6320d436617.jpg)
+Finally, we will integrate our Redux components with the React components, making use of the Redux connect functions [mapStateToProps](https://react-redux.js.org/using-react-redux/connect-mapstate), and [mapDispatchToProps](https://react-redux.js.org/using-react-redux/connect-mapdispatch).
 
 ## Tasks
 
@@ -58,12 +55,12 @@ function WhoIsIt({
   getPokemonItem,
   addDiscoveredPokemon,
 }) {
-  const { pokemonResponse, isRequestPending, error } = pokeapiItem;
+  const { pokemonResponse, status, error } = pokeapiItem;
 ```
 
 ```js
 function Pokedex({ pokeapiPage, pokedex, getPokemonPage, setCurrentPageUrl }) {
-  const { pokemonResponse, isRequestPending, error } = pokeapiPage;
+  const { pokemonResponse, status, error } = pokeapiPage;
   const { currentPageUrl } = pokedex;
 ```
 
