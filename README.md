@@ -6,10 +6,43 @@ This workshop uses the [PokéAPI](https://pokeapi.co/) to create an example Reac
 
 Follow the step markdown files in the [docs](./docs) folder, starting with [docs/step1](./docs/step1.md)
 
-## Prerequisites
+The final application code is already present in the [src/](./src) directory.
 
-- HTML/CSS
-- ES6 JavaScript
+You can run the application to view the final project in your local browser, or [view it deployed on Netlify](https://react-redux-pokeapi.netlify.app/).
+
+Once you are ready to begin, delete the [src](./src) directory files and follow the steps in the [docs](./docs) folder.
+
+### Setup
+
+Make sure [Node](http://nodejs.org/) is installed. Node: version 15.13.0
+
+#### Installing Node on Mac
+
+You can use the [Homebrew](https://brew.sh/) package manager to install Node:
+
+```bash
+brew install node@15.13.0
+```
+
+#### Installing Node on Windows
+
+Use the Windows Installer from the [Node website](https://nodejs.org/en/download/).
+
+### Running the application
+
+1. Install the node modules:
+
+```bash
+npm install
+```
+
+2. Run the application
+
+```bash
+npm run start
+```
+
+3. Navigate to [localhost:3000](http://localhost:3000/) in your browser.
 
 ## Recommended Learning Resources
 
